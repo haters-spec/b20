@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #080808;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+  }
+
+  .poster {
+    width: 100vw;
+    min-height: 100vh;
+    background: #080808;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 4rem 2rem;
+  }
+
+  .glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px; height: 500px;
+    background: radial-gradient(ellipse, rgba(210,175,110,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .top-line, .bottom-line {
+    position: absolute;
+    left: 3rem; right: 3rem;
+    height: 1px;
+    background: rgba(210,175,110,0.2);
+  }
+  .top-line { top: 2.5rem; }
+  .bottom-line { bottom: 2.5rem; }
+
+  .corner {
+    position: absolute;
+    width: 18px; height: 18px;
+    border-color: rgba(210,175,110,0.35);
+    border-style: solid;
+  }
+  .corner-tl { top: 2rem; left: 2rem; border-width: 1px 0 0 1px; }
+  .corner-tr { top: 2rem; right: 2rem; border-width: 1px 1px 0 0; }
+  .corner-bl { bottom: 2rem; left: 2rem; border-width: 0 0 1px 1px; }
+  .corner-br { bottom: 2rem; right: 2rem; border-width: 0 1px 1px 0; }
+
+  .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(210,175,110,0.6);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.3s;
+  }
+
+  .quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 8vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.15;
+    text-align: center;
+    color: #ece8df;
+    max-width: 14ch;
+    letter-spacing: -0.01em;
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards 0.6s;
+  }
+
+  .quote em {
+    font-style: italic;
+    color: #d2af6e;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(210,175,110,0.4);
+    margin: 2.5rem auto;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1.2s;
+  }
+
+  .author {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(236,232,223,0.3);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.4s;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="glow"></div>
+
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+  <div class="top-line"></div>
+  <div class="bottom-line"></div>
+
+  <p class="label">Kata Motivasi</p>
+
+  <h1 class="quote">
+    Wagu penjagane<br>Malah Ngajak Gelud<br><em>Luar Biasa</em>
+  </h1>
+
+  <div class="divider"></div>
+
+  <p class="author">Mulai dari sekarang &nbsp;·&nbsp; Satu langkah kecil &nbsp;·&nbsp; Pecat Bae Penjagane</p>
+</div>
+</body>
+</html>
